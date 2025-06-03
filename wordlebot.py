@@ -87,18 +87,14 @@ for p in dictionary.keys():
                 solutions.append(p)
 print()
 
-print("\rpossible solutions:                                      ")
+print("possible solutions:")
 list.sort(solutions, key=lambda w: freq.get(w, -100000000), reverse=True)
 print(solutions)
 
 if (len(solutions)>1):
     unknown_letters = list(dict.fromkeys(''.join(solutions)))
     unknown_letters = [s for s in unknown_letters if s not in CORRECT_LETTERS]
-    # unknown_letters = list(unknown_letters)
-    # list.sort(unknown_letters, key=lambda l: letter_freq[l], reverse=True)
     print(f"\nunknown letters: %s"%unknown_letters)
-    # unknown_letters = unknown_letters[:5]
-    # print(f"\n5 most common unknown letters: %s"%unknown_letters)
     def generate_guesses(words = solutions):
         guess_set = set()
         best_guesses = []
