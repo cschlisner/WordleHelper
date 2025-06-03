@@ -21,13 +21,6 @@ with open('unigrams_freq_5let.csv') as f:
 with open('dictionary_5let.json', 'r') as f:
     dictionary = json.load(f)
 
-def generate_permutations(iterable):
-  p = list(itertools.permutations(iterable, 5))
-  joined = set()
-  for pe in p:
-    joined.add(''.join(pe))
-  return joined
-
 letter_freq = {
 "e":127,
 "t":91,
